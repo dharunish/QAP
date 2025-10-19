@@ -20,7 +20,7 @@ Experiments show that QAP enhances reasoning accuracy across diverse benchmarks 
 ## 🧩 QAP Prompting Workflow
 
 <div align="center">
-  <img src="images/QAP.png" alt="QAP Prompting Workflow Diagram" width="80%" />
+  <img src="static/images/CoTvQAP.png" alt="QAP Prompting Workflow Diagram" width="80%" />
 </div>
 
 **Figure 1.** QAP Prompting Workflow Diagram — illustrating the structured reasoning process introduced in our approach.
