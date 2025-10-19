@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Question-Analysis Prompting Improves LLM Performance in Reasoning
+Tasks">
+  <meta name="keywords" content="QAP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Question-Analysis Prompting Improves LLM Performance in Reasoning
+Tasks</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Question-Analysis Prompting Improves LLM Performance in Reasoning
+Tasks</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://dharunish.github.io/">Dharunish Yugeswardeenoo</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Kevin Zhu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="">Sean O'Brien</a><sup>3</sup>,
+           
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block"><sup>1</sup>University of Washington,</span>
+            <span class="author-block"><sup>2</sup>Google Research</span> -->
+            <p>Algoverse AI Research</p>
+          </div>
+           <div class="is-size-5 publication-authors">
+            <span class="contrib" style="margin-top: 15px; margin-bottom: 5px; display: inline-block;">
+              <small>                    <em>Published in <a href="https://aclanthology.org/2024.acl-srw.45/">Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL)</a> @ <a href="https://aclanthology.org/volumes/2024.acl-srw/"> ACL 2025</a></em></small>
+            </span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2407.03624"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=yL2OuqC7wzw"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/dharunish/QAP/code"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/dharunish/QAP/Logs"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        Although LLMs have the potential to transform many fields, they still underperform humans in reasoning tasks. Existing methods induce the model to produce step-by-step calculations, but this research explores the question: Does making the LLM analyze the question improve its performance? We propose a novel prompting strategy called <strong>Question-Analysis Prompting (QAP)</strong>, in which the model is prompted to explain the question in <em>n</em> words before solving. The value of <em>n</em> influences the length of response generated by the model. QAP is evaluated on GPT-3.5 Turbo and GPT-4 Turbo across arithmetic datasets GSM8K, AQuA, and SAT, as well as commonsense dataset StrategyQA. QAP is compared with chain-of-thought (CoT), Plan and Solve Prompting (PS+), and Take A Deep Breath (TADB). QAP outperforms all state-of-the-art prompts on AQuA and SAT datasets for both GPT-3.5 and GPT-4 Turbo, ranking among the top-2 prompts in 75 % of tests. The analysis shows that response length is a critical factor: longer reasoning chains help with harder questions but can harm easy-question accuracy.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- Highlights -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Highlights</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li>Introduces <strong>QAP (Question-Analysis Prompting)</strong>: a zero-shot prompting method where the model first explains the question (in at least <em>n</em> words) before attempting to solve. </li>
+            <li>The parameter <em>n</em> (word count) is configurable (e.g., 25, 50, 100, 150, 200) and correlates with response length and performance. </li>
+            <li>Evaluation across arithmetic reasoning (datasets: GSM8K, AQuA, SAT) and commonsense reasoning (dataset: StrategyQA) with two model sizes (GPT-3.5 Turbo, GPT-4 Turbo). </li>
+            <li>QAP outperforms or matches other strong prompting baselines — including Chain-of-Thought (CoT), Plan & Solve Plus (PS+), and Take A Deep Breath (TADB) — particularly on harder tasks AQuA and SAT. </li>
+            <li>Finds an interesting trade-off: longer, more detailed explanations help for “hard” questions, but for easier ones they may harm performance (excess verbosity becomes a drawback). </li>
+            <li>Demonstrates that improving model performance is not just about better solving (step-by-step), but improving how the question is <strong>understood</strong> and <strong>interpreted</strong> before solving. </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<!-- Figures Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Figures</h2>
+    <div class="box has-text-justified">
+      <figure class="has-text-centered">
+      <img src="static/images/CoTvQAP.png" alt="QAP Prompting Example" style="max-width: 100%; height: auto; border-radius: 12px;">
+      <figcaption><strong>Figure 1:</strong> QAP Prompting Example</figcaption>
+      </figure>
+    </div>
+
+
+    <div class="box has-text-justified">
+      <figure class="has-text-centered">
+      <img src="static/images/QAPvsCoT.png" alt="QAP vs CoT Performance" style="max-width: 100%; height: auto; border-radius: 12px;">
+      <figcaption><strong>Figure 2:</strong> QAP vs CoT Performance</figcaption>
+      </figure>
+    </div>
+
+        <div class="box has-text-justified">
+      <figure class="has-text-centered">
+      <img src="static/images/boxplots.png" alt="Median word counts" style="max-width: 100%; height: auto; border-radius: 12px;">
+      <figcaption><strong>Figure 3:</strong> Median word counts in response for all datasets using GPT-3.5 Turbo and GPT-4 Turbo</figcaption>
+      </figure>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Results Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+    <div class="content has-text-justified">
+      <p>The following tables summarize performance (%) across reasoning benchmarks for GPT-3.5 Turbo and GPT-4 Turbo under different prompting methods.</p>
+    </div>
+
+ <section class="section">
+  <div class="columns">
+
+    <!-- GPT-3.5 Turbo Table -->
+    <div class="column">
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+          <caption><strong>Table 1:</strong> Results for GPT-3.5 Turbo</caption>
+          <thead>
+            <tr>
+              <th>Prompt</th>
+              <th>GSM8K</th>
+              <th>AQuA</th>
+              <th>SAT</th>
+              <th>StratQA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Baseline</td><td>78.7</td><td>52.8</td><td>70.9</td><td><strong>65.1</strong></td></tr>
+            <tr><td>QAP25</td><td>67.1</td><td>39.4</td><td>35.0</td><td>63.1</td></tr>
+            <tr><td>QAP50</td><td>77.8</td><td>50.0</td><td>52.7</td><td>61.4</td></tr>
+            <tr><td>QAP100</td><td>77.4</td><td>53.9</td><td>75.0</td><td>57.1</td></tr>
+            <tr><td>QAP150</td><td>78.5</td><td><strong>59.4</strong></td><td><strong>78.6</strong></td><td>53.2</td></tr>
+            <tr><td>QAP200</td><td>76.8</td><td>52.4</td><td>75.0</td><td>51.8</td></tr>
+            <tr><td>TADB</td><td>78.5</td><td>57.1</td><td>74.5</td><td>62.9</td></tr>
+            <tr><td>CoT</td><td><strong>79.0</strong></td><td>53.1</td><td>65.9</td><td>59.2</td></tr>
+            <tr><td>PS+</td><td>74.7</td><td>35.0</td><td>70.9</td><td>35.6</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- GPT-4 Turbo Table -->
+    <div class="column">
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+          <caption><strong>Table 2:</strong> Results for GPT-4 Turbo</caption>
+          <thead>
+            <tr>
+              <th>Prompt</th>
+              <th>GSM8K</th>
+              <th>AQuA</th>
+              <th>SAT</th>
+              <th>StratQA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Baseline</td><td>95.3</td><td>78.7</td><td>96.8</td><td>76.3</td></tr>
+            <tr><td>QAP25</td><td>94.8</td><td>77.6</td><td>94.5</td><td>77.6</td></tr>
+            <tr><td>QAP50</td><td>93.4</td><td><strong>79.1</strong></td><td>95.9</td><td>76.9</td></tr>
+            <tr><td>QAP100</td><td>94.6</td><td>75.6</td><td>96.8</td><td>77.2</td></tr>
+            <tr><td>QAP150</td><td>94.7</td><td>78.0</td><td>97.3</td><td>77.6</td></tr>
+            <tr><td>QAP200</td><td>95.0</td><td>76.4</td><td><strong>98.2</strong></td><td>75.9</td></tr>
+            <tr><td>TADB</td><td>95.1</td><td>78.7</td><td>96.8</td><td><strong>78.0</strong></td></tr>
+            <tr><td>CoT</td><td><strong>95.6</strong></td><td>74.4</td><td>95.0</td><td>75.1</td></tr>
+            <tr><td>PS+</td><td>94.8</td><td>52.8</td><td>97.3</td><td>77.1</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- BibTeX -->
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>@article{yugeswardeenoo2024question,
+  title={Question-analysis prompting improves LLM performance in reasoning tasks},
+  author={Yugeswardeenoo, Dharunish and Zhu, Kevin and O'Brien, Sean},
+  journal={arXiv preprint arXiv:2407.03624},
+  year={2024}
+}
+</code></pre>
+  </div>
+</section>
+
+
+</body>
+</html>
